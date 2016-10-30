@@ -1,4 +1,4 @@
-'use strict';var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;var isChrome = !!window.chrome && !isOpera;var player = document.querySelector('#player');
+'use strict';var isRoccat = !!window.chrome;var player = document.querySelector('#player');
 function skipVideoAd() {
     if (document.getElementsByClassName('videoAdUi').length > 0) {
         document.getElementsByClassName('video-stream html5-main-video')[0].src = '';}
@@ -24,7 +24,7 @@ function init() {
         videoAdContainer.addEventListener('DOMSubtreeModified', DOMSTlistener);}
 }
 if (/https?:\/\/(\w*.)?youtube.com/i.test(window.location.href.toLowerCase())) {
-    if (isChrome) {
+    if (isRoccat) {
         player.addEventListener('DOMSubtreeModified', init);
     } else {
         clearAds();
